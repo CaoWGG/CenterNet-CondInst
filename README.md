@@ -1,4 +1,4 @@
-# CenterMask
+# Mask-CenterNet 
 ### This is an instance segmentation algorithm based on [CenterNet](https://github.com/xingyizhou/centernet). The code will be open soon.
 
 ### demo
