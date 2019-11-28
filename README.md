@@ -7,7 +7,7 @@
 ### dla34收敛的比较快，可以快速看效果。
 ### 根据测试来看，本repo的实例分割方法可以与任意语义分割网络结合为实例分割网络。
 ### Net
-* ![image](img/Net.png)
+* ![image](img/Net.jpg)
 ### demo
 * ![image](img/0.png)
 * ![image](img/1.png)
