@@ -1,5 +1,5 @@
 # Mask-CenterNet 
-### This is an instance segmentation algorithm based on [CenterNet](https://github.com/xingyizhou/centernet). The code will be open soon.
+### This is an instance segmentation algorithm based on [CenterNet](https://github.com/xingyizhou/centernet).
 ### 基于yolact思想的new idea。
 ### 只支持训练和推理，还没实现测准确率。
 ### 显卡多的大兄弟可以试试，调调。
