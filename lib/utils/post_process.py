@@ -3,7 +3,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-from .image import transform_preds,transform_segs
+from .image import transform_preds
 from .ddd_utils import ddd2locrot
 
 
