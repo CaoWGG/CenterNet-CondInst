@@ -22,11 +22,12 @@ cd src
 python demo.py ctseg --exp_id coco_dla_1x --keep_res --resume --demo ../data/coco/val2017
 ```
 
-## Current result (model still in training)
-The AP and VISIMG are the result of training 13 epochs with dla34 backbone.
-
-![](readme/AP.png)
-
+## Result
+| type| AP |  AP<sub>50</sub> | AP<sub>75</sub> | AP<sub>s</sub> | AP<sub>m</sub> | AP<sub>l</sub> | 
+|-----|------|-----|-----|-----|-----|-----|
+|box|0.358|0.540|0.384|0.154|0.391|0.535|
+|mask|0.306|0.493|0.317|0.100|0.341|0.490|
+backbone=dla_34, batch=32
 ![](readme/vis.png)
 
 ## Reference

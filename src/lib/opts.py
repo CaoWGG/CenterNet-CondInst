@@ -190,7 +190,7 @@ class opts(object):
     # ctseg
     self.parser.add_argument('--seg_feat_channel', default=8,type=int,
                              help='.')
-    self.parser.add_argument('--seg_weight', default= 1., type=float,
+    self.parser.add_argument('--seg_weight', default= 3., type=float,
                              help='')
 
     # exdet

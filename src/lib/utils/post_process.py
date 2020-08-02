@@ -104,6 +104,8 @@ def ctdet_post_process(dets, c, s, h, w, num_classes):
 def ctseg_post_process(dets,masks,c, s, h, w,img_h,img_w, num_classes):
   # dets: batch x max_dets x dim
   # return 1-based class det dict
+  from concurrent.futures import ThreadPoolExecutor
+  worker = ThreadPoolExecutor(max_workers=8)
   ret = []
   for i in range(dets.shape[0]):
     top_preds = {}
@@ -120,10 +122,9 @@ def ctseg_post_process(dets,masks,c, s, h, w,img_h,img_w, num_classes):
       top_preds[j + 1] = {'boxs': np.concatenate([
         dets[i, inds, :4].astype(np.float32),
         dets[i, inds, 4:5].astype(np.float32)], axis=1),
-                          'pred_mask':[ mask_utils.encode(
-                            (np.asfortranarray(cv2.warpAffine(mask,trans, (img_w, img_h),
-                             flags=cv2.INTER_CUBIC)>0.5).astype(np.uint8)))
-                            for mask in masks[i,inds]]
+		  "pred_mask":list(worker.map(lambda x:mask_utils.encode(
+				  (np.asfortranarray(cv2.warpAffine(x, trans, (img_w, img_h),
+				   flags=cv2.INTER_CUBIC) > 0.5).astype(np.uint8))),masks[i, inds]))
                           }
     ret.append(top_preds)
   return ret
